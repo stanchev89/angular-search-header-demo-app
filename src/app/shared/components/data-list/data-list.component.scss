@@ -1,0 +1,30 @@
+.content-wrapper {
+  width: 100%;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+  & li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    & .item-wrapper {
+      flex-grow: 1;
+    }
+  }
+}
+
+.item-wrapper {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  & .mat-icon {
+    align-self: center;
+  }
+}
+
+.no-records-wrapper {
+  text-align: center;
+  margin-top: 50px;
+}

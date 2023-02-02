@@ -1,0 +1,14 @@
+<div class="content-wrapper" *ngIf="data.length">
+  <ul>
+    <li *ngFor="let item of data">
+      <div class="item-wrapper">
+        <mat-icon color="primary" *ngIf="itemIcon">{{itemIcon}}</mat-icon>
+        <app-data-list-item [item]="item"></app-data-list-item>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="!data.length" class="no-records-wrapper">
+  <h3>No records found</h3>
+</div>

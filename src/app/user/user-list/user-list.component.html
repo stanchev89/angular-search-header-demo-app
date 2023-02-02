@@ -1,0 +1,22 @@
+<app-search-header [inputProps]="searchProps"></app-search-header>
+
+<app-pagination [totalLength]="dataTotalCount"></app-pagination>
+
+<ng-container
+  #resolver="appResolve"
+  [appResolve]="request$"
+  [inputProps]="searchProps"
+  (handleDataUpdate)="onDataUpdate($event)"
+>
+</ng-container>
+
+<ng-container *ngTemplateOutlet="resolver.isResolving ? loader : dataList"></ng-container>
+
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>
+
+<ng-template #dataList>
+  <app-data-list [data]="data" itemIcon="person"></app-data-list>
+  <app-pagination *ngIf="data.length > 10" [totalLength]="dataTotalCount"></app-pagination>
+</ng-template>

@@ -1,0 +1,15 @@
+.mat-sidenav-container {
+  min-height: 100vh;
+  height: 100%;
+}
+
+.mat-sidenav {
+  height: 100vh;
+  padding: 14px;
+}
+
+.mat-sidenav-content {
+  overflow: hidden;
+  overflow-Y: scroll;
+  padding: 20px;
+}

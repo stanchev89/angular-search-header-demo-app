@@ -1,0 +1,23 @@
+<div class="search-header">
+  <form [formGroup]="form">
+    <div class="search-header-input-wrapper" *ngFor="let prop of inputProps;">
+      <mat-form-field appearance="fill">
+        <mat-label>{{prop.label}}</mat-label>
+        <input *ngIf="!prop.select"
+               matInput
+               [formControlName]="prop.name"
+               [type]="prop.isNumber ? 'number' : 'text'"
+               [errorStateMatcher]="errorStateMatcher"
+        >
+        <mat-select *ngIf="!!prop.select" [formControlName]="prop.name" [errorStateMatcher]="errorStateMatcher">
+          <mat-option [value]="prop.select.getValue(opt)" *ngFor="let opt of prop.select.list">
+            {{prop.select.getLabel(opt)}}
+          </mat-option>
+        </mat-select>
+        <mat-error>Invalid value. Filter not applied</mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<button mat-stroked-button (click)="resetValues()">Reset Filters</button>
+

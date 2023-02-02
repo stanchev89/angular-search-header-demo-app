@@ -1,0 +1,11 @@
+<div class="content-wrapper">
+  <div *ngFor="let keyVal of values" class="item-content-wrapper">
+    <button mat-icon-button color="primary" matTooltip="Copy" [matTooltipPosition]="'left'"
+            (click)="copyToClipboard(keyVal[1])"
+    >
+      <mat-icon>copy_all</mat-icon>
+    </button>
+    <p>{{keyVal[0]}}</p>
+    <h4>{{keyVal[1] | json}}</h4>
+  </div>
+</div>

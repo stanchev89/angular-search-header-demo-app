@@ -1,0 +1,9 @@
+<mat-paginator *ngIf="!!totalLength"
+  [length]="totalLength"
+  (page)="handleChange($event)"
+  [pageSize]="size$ | async"
+  [pageIndex]="((page$ | async) || 1) - 1"
+  [pageSizeOptions]="sizeOptions"
+  [showFirstLastButtons]="true"
+>
+</mat-paginator>

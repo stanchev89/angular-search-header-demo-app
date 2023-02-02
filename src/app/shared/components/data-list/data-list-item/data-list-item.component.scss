@@ -1,0 +1,13 @@
+.content-wrapper {
+  margin: 10px 0;
+  border-bottom: 1px solid lightgrey;
+}
+
+.item-content-wrapper {
+  display: flex;
+  align-items: center;
+  & p {
+    margin-right: 20px;
+    color: darkgray;
+  }
+}
